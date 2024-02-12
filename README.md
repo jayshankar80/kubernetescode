@@ -1,25 +1,28 @@
+**Proof of Concept (POC) Description**
+This initiative entails deploying a Flask application while also committing the code to GitHub. Jenkins orchestrates the process by establishing an image pipeline, culminating in the creation of the image in Docker Hub. Furthermore, Jenkins manages an additional pipeline dedicated to updating the Kubernetes deployment manifest file. Argo CD assumes a pivotal role in automating the deployment of the desired application states within the Kubernetes cluster environment.
 
-This repo along with https://github.com/jayshankar80/kubernetesmanifest creates a Jenkins pipeline with GitOps to deploy code into a Kubernetes cluster. CI part is done via Jenkins and CD part via ArgoCD (GitOps).
+**Implementation Method**
 
-Jenkins installation
-Jenkins is installed on EC2. Follow the instructions on https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/ . You can skip "Configure a Cloud" part for this demo. Please note some commands from this link might give errors, below are the workarounds:
+**Installation**
+This repository, in conjunction with kubernetesmanifest https://github.com/jayshankar80/kubernetesmanifest, facilitates the establishment of a Jenkins pipeline imbued with GitOps principles for deploying code into a Kubernetes cluster. Continuous Integration (CI) responsibilities are undertaken by Jenkins, while Continuous Deployment (CD) tasks are delegated to ArgoCD (GitOps).
 
-If you get daemonize error while running the command sudo yum install jenkins java-1.8.0-openjdk-devel -y then , run the commands from the answer of https://stackoverflow.com/questions/68806741/how-to-fix-yum-update-of-jenkins
+Jenkins Installation: Jenkins is deployed on an EC2 instance. Refer to the instructions outlined in Jenkins Documentation for installation guidance. https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/ . 
+Docker Installation: After setting up Jenkins, install Docker on the EC2 instance. Follow the steps elucidated here. Alternatively, you can utilize your preferred Linux system with the requisite packages installed.
+ https://serverfault.com/questions/836198/how-to-install-docker-on-aws-ec2-instance-with-ami-ce-ee-update
 
-Install Docker on the EC2 after Jenkins is installed by following the instructions on https://serverfault.com/questions/836198/how-to-install-docker-on-aws-ec2-instance-with-ami-ce-ee-update
+Git Installation: Install Git on the EC2 instance using the command sudo yum install git.
 
-Run sudo chmod 666 /var/run/docker.sock on the EC2 after Docker is installed.
+Kubernetes and ArgoCD Installation: For local development, Kubernetes (kubectl) is installed on a macOS system. ArgoCD installation instructions are available here.
+Pipeline Configuration  https://argo-cd.readthedocs.io/en/stable/getting_started/
 
-Install Git on the EC2 by running sudo yum install git
+***Pipelines Configuration ***
 
-Jenkins plugins
-Install the following plugins for the demo.
+Kindly refer to the attached screenshot for the Jenkins pipeline configuration pertinent to each repository. You can locate the screenshot in the respective repository folder.
 
-Amazon EC2 plugin (No need to set up Configure Cloud after)
-Docker plugin
-Docker Pipeline
-GitHub Integration Plugin
-Parameterized trigger Plugin
-ArgoCD installation
-Install ArgoCD in your Kubernetes cluster following this link - https://argo-cd.readthedocs.io/en/stable/getting_started/
+**Troubleshooting**
+In case of encountering permission issues while attempting to login to Docker Hub from an AWS Linux virtual machine, consider the resolution steps outlined in this Stack Overflow thread.
 
+
+**Resulted Output**
+
+Kindly refer to the attached screenshot for running buildimage, updatemanifest and ArgoCD pipeline 
