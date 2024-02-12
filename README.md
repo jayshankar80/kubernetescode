@@ -15,7 +15,7 @@ Git Installation: Install Git on the EC2 instance using the command sudo yum ins
 Kubernetes and ArgoCD Installation: For local development, Kubernetes (kubectl) is installed on a macOS system. ArgoCD installation instructions are available here.
 Pipeline Configuration  https://argo-cd.readthedocs.io/en/stable/getting_started/
 
-***Pipelines Configuration ***
+**Pipelines Configuration**
 
 Kindly refer to the attached screenshot for the Jenkins pipeline configuration pertinent to each repository. You can locate the screenshot in the respective repository folder.
 
