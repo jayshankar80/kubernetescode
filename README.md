@@ -21,6 +21,7 @@ Kindly refer to the attached screenshot for the Jenkins pipeline configuration p
 
 **Troubleshooting**
 In case of encountering permission issues while attempting to login to Docker Hub from an AWS Linux virtual machine, consider the resolution steps outlined in this Stack Overflow thread.
+
 make sure you install docker-pipeline from manage-pluging im jenkins else you will face grovey Java error while running the pipeline 
 
 
