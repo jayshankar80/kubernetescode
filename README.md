@@ -28,3 +28,4 @@ make sure you install docker-pipeline from manage-pluging im jenkins else you wi
 **Resulted Output**
 
 Kindly refer to the attached screenshot for running buildimage, updatemanifest and ArgoCD pipeline 
+https://github.com/jayshankar80/kubernetesmanifest.git
